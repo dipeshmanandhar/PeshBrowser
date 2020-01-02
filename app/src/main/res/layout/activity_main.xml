@@ -1,74 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/mainContainer"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFF"
-        android:padding="5dp"
-        android:elevation="10dp">
+        android:layout_height="match_parent"
+        android:background="#FFF" >
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="24dp"
-            android:minHeight="24dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/arrow_back" />
-
-        <Button
-            android:id="@+id/forwardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="24dp"
-            android:minHeight="24dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/arrow_forward" />
-
-        <EditText
-            android:id="@+id/editText"
-            android:textSize="20sp"
-            android:hint="https://www.google.com/"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:background="#FFF"
             android:padding="5dp"
-            android:singleLine="true"
-            android:scrollHorizontally="true"
-            android:imeOptions="actionGo"
-            android:background="@drawable/searchbar_background"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="5dp" />
+            android:elevation="10dp">
 
-        <Button
-            android:id="@+id/goButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="60dp"
-            android:minHeight="40dp"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:background="@drawable/button_background"
-            android:textColor="#FFF"
-            android:layout_marginHorizontal="5dp"
-            android:layout_gravity="center_vertical"
-            android:text="Go" />
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="24dp"
+                android:minHeight="24dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/arrow_back" />
+
+            <Button
+                android:id="@+id/forwardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="24dp"
+                android:minHeight="24dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/arrow_forward" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:textSize="20sp"
+                android:hint="https://www.google.com/"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
+                android:imeOptions="actionGo"
+                android:background="@drawable/searchbar_background"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="5dp" />
+
+            <Button
+                android:id="@+id/goButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="60dp"
+                android:minHeight="40dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:background="@drawable/button_background"
+                android:textColor="#FFF"
+                android:layout_marginHorizontal="5dp"
+                android:layout_gravity="center_vertical"
+                android:text="Go" />
+
+        </LinearLayout>
+
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="0dp" />
 
     </LinearLayout>
 
-
-    <WebView
-        android:id="@+id/webView"
+    <FrameLayout
+        android:id="@+id/fullScreenContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="0dp" />
+        android:visibility="gone"
+        android:background="#000" />
 
-</LinearLayout>
+</FrameLayout>
